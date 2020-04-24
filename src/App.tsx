@@ -11,7 +11,9 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { images, ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
+import HomePage from './pages/HomePage';
+import SendPage from './pages/SendPage';
+import ReceivePage from './pages/ReceivePage';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
@@ -38,9 +40,9 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
         <IonRouterOutlet>
-          <Route path="/homePage" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab3" component={Tab3} />
+          <Route path="/homePage" component={HomePage} exact={true} />
+          <Route path="/SendPage/:wallet" component={SendPage} exact={true} />
+          <Route path="/ReceivePage/:wallet" component={ReceivePage} exact={true}/>
           <Route path="/" render={() => <Redirect to="/homePage" />} exact={true} />
         </IonRouterOutlet>
     </IonReactRouter>

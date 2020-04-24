@@ -4,9 +4,9 @@ import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent }
 import { useSelector, useDispatch } from 'react-redux'
 import SelectTransaction from '../components/SelectTransaction';
 
-import './Tab1.css';
+import './HomePage.css';
 
-const Tab1: React.FC = () => {
+const HomePage: React.FC = () => {
 
   
   const counter = useSelector( (state:any) => state.propsPage.counter);
@@ -15,12 +15,16 @@ const Tab1: React.FC = () => {
   const dispatch = useDispatch()
 
 
+  /*
+  <IonButton color="primary" onClick={() => { dispatch({ type: "INCREASE_COUNTER" })}}>Primady { counter }</IonButton>
+  <IonButton routerLink="/tab2">got to tab2 </IonButton>
+  */
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Home Page</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -29,15 +33,15 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButton color="primary" onClick={() => { dispatch({ type: "INCREASE_COUNTER" })}}>Primady { counter }</IonButton>
-        <IonButton routerLink="/tab2">got to tab2 </IonButton>
         
 
 
         <SelectTransaction walletAddress="0x74A0Ccc350b5877cf6A8FB1Ccf922E76ECb8b524" />
+        <IonButton>Add a wallet</IonButton>
+        <IonButton>Create a wallet</IonButton>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default HomePage;

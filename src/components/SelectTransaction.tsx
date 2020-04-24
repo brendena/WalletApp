@@ -19,8 +19,8 @@ const SelectTransaction: React.FC<SelectTransactionProps> = ({ walletAddress }) 
         <div className="center walletAddress">
           {walletAddress}
         </div>
-        <IonButton className="transactionButtons">send</IonButton>
-        <IonButton className="transactionButtons">receive</IonButton>
+        <IonButton routerLink={"/SendPage/" + walletAddress} className="transactionButtons">send</IonButton>
+        <IonButton routerLink={"/ReceivePage/" + walletAddress} className="transactionButtons">receive</IonButton>
         <IonButton className="transactionButtons">history</IonButton>
     </IonCard>
 
