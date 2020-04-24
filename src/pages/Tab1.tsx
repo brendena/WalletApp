@@ -1,7 +1,9 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
 import { useSelector, useDispatch } from 'react-redux'
+import SelectTransaction from '../components/SelectTransaction';
+
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -28,7 +30,11 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonButton color="primary" onClick={() => { dispatch({ type: "INCREASE_COUNTER" })}}>Primady { counter }</IonButton>
-        <ExploreContainer name="Tab 1 page" />
+        <IonButton routerLink="/tab2">got to tab2 </IonButton>
+        
+
+
+        <SelectTransaction walletAddress="0x74A0Ccc350b5877cf6A8FB1Ccf922E76ECb8b524" />
       </IonContent>
     </IonPage>
   );
